@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
+import { BoutonIonicPage } from '../pages/bouton-ionic/bouton-ionic';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HelloIonicPage,
+    BoutonIonicPage,
     ItemDetailsPage,
     ListPage
   ],
@@ -25,6 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HelloIonicPage,
+    BoutonIonicPage,
     ItemDetailsPage,
     ListPage
   ],

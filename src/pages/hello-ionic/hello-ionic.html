@@ -22,4 +22,30 @@
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
 
+  <!-- Check-box alert -->
+
+  <button ion-button block color="danger" (click)="showCheckbox()">Show Checkbox Alert</button>
+
+  <!-- Radio alert -->
+
+  <button ion-button block light (click)="showRadio()">Show Radio Alert</button>
+
+  <!-- confirmation alert -->
+
+  <button ion-button color="primary" block (click)="showConfirm()">Show Confirm Alert</button>
+
+  <!-- simple prompt -->
+
+  <button ion-button block color="dark" (click)="showAlert()">Show Basic Alert</button>
+
+  <!-- alert script -->
+
+  <button ion-button color="secondary" block (click)="showPrompt()">Show Prompt Alert</button>
+
+  <!-- Action sheets script -->
+
+  <button ion-button block (click)="presentActionSheet()">
+    Show Action Sheet
+  </button>
+
 </ion-content>
