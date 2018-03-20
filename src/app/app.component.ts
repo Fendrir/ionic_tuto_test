@@ -1,12 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
+import { SQLite } from '@ionic-native/sqlite';
+import { Toast } from '@ionic-native/toast';
+
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
 import { BoutonIonicPage } from '../pages/bouton-ionic/bouton-ionic';
 import { SearchbarIonic } from '../pages/searchbar-ionic/searchbar-ionic';
+import { CrudIonic } from '../pages/crud-ionic/crud-ionic';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -45,6 +49,7 @@ export class MyApp {
       { title: 'My First List', component: ListPage },
       { title: 'My first Buttons', component: BoutonIonicPage },
       { title: 'My first Searchbar', component: SearchbarIonic },
+      { title: 'My first crud', component: CrudIonic },
     ];
   }
 
