@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
@@ -19,14 +20,23 @@ export class MyApp {
 
   // make HelloIonicPage the root (or first) page
   rootPage = HelloIonicPage;
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(
+    private storage: Storage,
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen
   ) {
+
+    // set a key/value
+    storage.set('name', 'Max');
+
+    // Or to get a key/value pair
+    storage.get('age').then((val) => {
+      console.log('Your age is', val);
+    });
     this.initializeApp();
 
     // set our app's pages

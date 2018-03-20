@@ -1,11 +1,11 @@
 <ion-header>
     <ion-navbar>
-        <button ion-button="ion-button" menutoggle="menuToggle">
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>My First Searchbar</ion-title>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>My First Searchbar</ion-title>
     </ion-navbar>
-</ion-header>
+  </ion-header>
 
 <ion-content padding="padding">
 
@@ -16,6 +16,10 @@
     </p>
     <p>
         voici un exemple
+    </p>
+
+    <p>
+        <button ion-button color="primary" menuToggle>Toggle Menu</button>
     </p>
 
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
