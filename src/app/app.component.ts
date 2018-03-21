@@ -1,8 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { Storage } from '@ionic/storage';
-
-import { SQLite } from '@ionic-native/sqlite';
-import { Toast } from '@ionic-native/toast';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
@@ -11,6 +7,8 @@ import { ListPage } from '../pages/list/list';
 import { BoutonIonicPage } from '../pages/bouton-ionic/bouton-ionic';
 import { SearchbarIonic } from '../pages/searchbar-ionic/searchbar-ionic';
 import { CrudIonic } from '../pages/crud-ionic/crud-ionic';
+
+import { CrudFirebasePage } from '../pages/crud-firebase/crud-firebase';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,25 +21,15 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = HelloIonicPage;
+  rootPage = CrudFirebasePage;
   pages: Array<{ title: string, component: any }>;
 
   constructor(
-    private storage: Storage,
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen
   ) {
-
-    // set a key/value
-    storage.set('name', 'Max');
-
-    // Or to get a key/value pair
-    storage.get('age').then((val) => {
-      console.log('Your age is', val);
-    });
-    this.initializeApp();
 
     // set our app's pages
     this.pages = [
@@ -50,6 +38,7 @@ export class MyApp {
       { title: 'My first Buttons', component: BoutonIonicPage },
       { title: 'My first Searchbar', component: SearchbarIonic },
       { title: 'My first crud', component: CrudIonic },
+      { title: 'My first Firebase Crud', component: CrudFirebasePage },
     ];
   }
 
