@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
+import firebase from 'firebase';
+
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
 import { BoutonIonicPage } from '../pages/bouton-ionic/bouton-ionic';
@@ -21,7 +23,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = CrudFirebasePage;
+  rootPage : any;
   pages: Array<{ title: string, component: any }>;
 
   constructor(
@@ -30,6 +32,16 @@ export class MyApp {
     public statusBar: StatusBar,
     public splashScreen: SplashScreen
   ) {
+
+    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      if (!user) {
+        this.rootPage = 'LoginPage';
+        unsubscribe();
+      } else {
+        this.rootPage = CrudFirebasePage;
+        unsubscribe();
+      }
+    });
 
     // set our app's pages
     this.pages = [

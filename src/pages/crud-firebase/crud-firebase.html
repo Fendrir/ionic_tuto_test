@@ -10,6 +10,15 @@
         <ion-icon name="menu"></ion-icon>
       </button>
       <ion-title>Crud-firebase</ion-title>
+
+      <!-- nav-bar crud add song with icon -->
+      <ion-buttons end>
+        <button ion-button icon-only (click)="addSong()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+      <!-- end of nav-bar crud add song with icon -->
+
     </ion-navbar>
   </ion-header>
 
@@ -26,4 +35,15 @@
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
 
+  <!-- list of songs in the view -->
+  <ion-list>
+    <ion-item *ngFor="let song of songs | async" (click)="showOptions(song.id, song.title)">
+      {{song.title}}
+    </ion-item>
+  </ion-list>
+  <!-- end of the list of songs in the view -->
+
+    <!-- Ceci est le script source de la db -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    
 </ion-content>
